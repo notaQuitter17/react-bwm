@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 
 class RentalDetail extends Component{
 
@@ -11,6 +11,7 @@ componentWillMount()    {
 }
 render(){
     const rental = this.props.rental;
+    if(rental.id) { 
     return(
         <div> 
         <p>{rental.title}</p>
@@ -18,7 +19,13 @@ render(){
         <p>{rental.description}</p>
         <p>{rental.dailyRate}$</p>
         </div>
-    );
+    )
+    }
+    else {
+        return (
+            <h1> Loading... </h1>
+        )
+    }
 }
 
 }
