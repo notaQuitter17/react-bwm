@@ -11,7 +11,7 @@ componentWillMount()    {
 }
 render(){
     const rental = this.props.rental;
-    if(rental.id) { 
+    if(rental._id) { 
     return(
         <div> 
         <p>{rental.title}</p>
